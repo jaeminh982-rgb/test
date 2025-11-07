@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>헬스장 메인 페이지</title>
+  <link rel="stylesheet" href="style2.css" />
+</head>
+<body>
+
+    
+  <header class="header">
+    <div class="logo">are you health club?</div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">센터찾기</a></li>
+        <li><a href="#">PT찾기</a></li>
+        <li><a href="#">가맹찾기</a></li>
+        <li><a href="#">이벤트</a></li>
+      </ul>
+    </nav>
+    <div class="login">
+      <a href="#">로그인 / 회원가입</a>
+    </div>
+  </header>
+
+         <script>
+      function Selector(el){
+         return document.querySelector(el);
+      }
+
+      let count = 0;
+
+      Selector('.next').addEventListener('click', function () {
+         if (count < 3) {
+            count++;
+            Selector('.container').style.transform = `translateX(-${count * 100}vw)`;
+         }
+      })
+      
+      Selector('.pre').addEventListener('click', function () {
+         if (3 > 0) {
+            count--;
+            Selector('.container').style.transform = `translateX(-${count * 100}vw)`;
+         }
+      })
+   </script>
+
+<section class="main-banner">
+  <button class="arrow left">&lt;</button>
+  <div class="container">
+      <div class="slide-wrap">
+    <img src="images/gym1.jpg" alt="센터 이미지 1">
+    </div>
+      <div class="slide-wrap">
+    <img src="images/gym2.jpg" alt="센터 이미지 2">
+      </div>
+      <div class="slide-wrap">
+    <img src="images/gym3.jpg" alt="센터 이미지 3">
+  </div>
+
+  <div class="button-wrap">
+      <button type="button" class="pre">&lt;</button>
+      <button type="button" class="next">&gt;</button>
+  </div>
+
+  <button class="arrow right">&gt;</button>
+</section>
+
+  <section class="search">
+    <h2>센터 검색</h2>
+    <div class="search-box">
+      <input type="text" placeholder="지역, 센터, 트레이너 검색" />
+      <button>검색</button>
+    </div>
+  </section>
+
+  <section class="reviews">
+    <h2>회원들 후기</h2>
+    <div class="review-container">
+      <div class="review-box">
+        <img src="images/member1.jpg" alt="회원 1">
+        <p>운동하면서 정말 몸이 좋아졌어요!</p>
+        
+      </div>
+      <div class="review-box">
+        <img src="images/member2.jpg" alt="회원 2">
+        <p>시설이 깨끗하고 트레이너가 친절해요!</p>
+      </div>
+    </div>
+  </section>
+</body>
+
+
+</html>
+
+  <style>
+      * {
+         margin: 0;
+         padding: 0;
+      }
+
+      .container {
+         display: flex;
+         width: 400vw;
+         transition: all 0.5s;
+      }
+
+      .slide-wrap {
+         width: 100vw;
+      }
+
+      img {
+         display: block;
+         margin: auto;
+         width: 150%;
+         max-height: 1600px;
+      }
